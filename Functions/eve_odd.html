@@ -1,0 +1,34 @@
+<!-- Write a program to check whether a number is even or odd using function -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Program to check whether a number is even or odd using function</p>
+      <p>Enter the number:</p>
+      <input type="number" id="number" />
+      <input type="button" onclick="check()" value="Submit" />
+    </div>
+    <div id="content"></div>
+    <script>
+        function check()
+        {
+            num = document.getElementById('number').value
+            if(num % 2 == 0)
+            {
+                document.getElementById('content').innerHTML = `<p>${num} is even</p>`
+            }
+            else
+            {
+                document.getElementById('content').innerHTML = `<p>${num} is odd</p>`
+            }
+        }
+    </script>
+  </body>
+</html>

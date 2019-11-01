@@ -1,0 +1,40 @@
+<!-- Write a program to find maximum and minimum between two numbers using functions -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to find maximum and minimum between two numbers using functions</p>
+        <p>Enter two numbers: </p>
+        <input type="number" id="inputOne" required>
+        <input type="number" id="inputTwo" required>
+        <input type="button" value="Submit" onclick="check()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function check()
+        {
+            inpOne = document.getElementById('inputOne').value
+            inpTwo = document.getElementById('inputTwo').value
+            compare(inpOne, inpTwo)
+        }
+        function compare(inpOne, inpTwo)
+        {
+            if(inpOne > inpTwo)
+            {
+                return document.getElementById('content').innerHTML = `<p>Larger number is: ${inpOne}</p><p>Smaller number is: ${inpTwo}</p>`
+            }
+            else
+            {
+                return document.getElementById('content').innerHTML = `<p>Larger number is: ${inpTwo}</p><p>Smaller number is: ${inpOne}</p>`
+            }
+        }
+    </script>
+</body>
+</html>

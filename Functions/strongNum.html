@@ -1,0 +1,111 @@
+<!-- Write a program to print all strong numbers between given interval using functions.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        Program to find Strong numbers between the given range:
+            <p>Enter the range:</p>
+            <input type="number" id="start" placeholder="From" required>
+            <input type="number" id="end" placeholder="To" required>
+            <input type="button" value="Submit" onclick="strongFun()">
+    </div>
+    <div id="content">
+
+    </div>
+    <script>
+        function strongFun()
+        {
+            var start = document.getElementById('start').value
+            var end = document.getElementById('end').value
+            var temp = 0
+            var fact = 0
+            start = parseInt(start)
+            end = parseInt(end)
+            if(start == end)
+            {
+                var num = Array.from(String(start), Number);
+                var len = num.length
+                var result = 0
+                for(let i = 0; i<len; i++)
+                {
+                    let fact = 1
+                    for(var j = num[i]; j>0; j--)
+                    {
+                        fact *= j
+                    }
+                    result += fact
+                }
+                if(result == start)
+                {
+                    document.getElementById('content').innerHTML =  `<p>Strong number is: </p>`
+                    document.getElementById('content').innerHTML += `${result}`
+                }
+                else
+                {
+                    document.getElementById('content').innerHTML =  `<p>No Strong number found</p>`
+                }
+            }
+            else if(start > end)
+            {
+                temp = start
+                start = end
+                end = temp
+                document.getElementById('content').innerHTML =  `<p>Strong numbers are: </p>`
+                console.log(start)
+                console.log(end)
+                for(var i = start; i<=end; i++)
+                {
+                    var num = Array.from(String(i), Number)
+                    var len = num.length
+                    var result = 0
+                    for(var k = 0; k<len; k++)
+                    {
+                        var fact = 1
+                        for(var j = num[k]; j>0; j--)
+                        {
+                            fact *= j
+                        }
+                        result += fact
+                    }
+                    if(result == i)
+                    {
+                        document.getElementById('content').innerHTML += `${result} `
+                    }
+                }
+            }
+            else
+            {
+                document.getElementById('content').innerHTML =  `<p>Strong numbers are: </p>`
+                console.log(start)
+                console.log(end)
+                for(var i = start; i<=end; i++)
+                {
+                    var num = Array.from(String(i), Number)
+                    var len = num.length
+                    var result = 0
+                    for(var k = 0; k<len; k++)
+                    {
+                        var fact = 1
+                        for(var j = num[k]; j>0; j--)
+                        {
+                            fact *= j
+                        }
+                        result += fact
+                    }
+                    if(result == i)
+                    {
+                        document.getElementById('content').innerHTML += `${result} `
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

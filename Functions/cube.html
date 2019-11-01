@@ -1,0 +1,35 @@
+<!-- Write a program to find cube of any number using function. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to find cube of any number using function</p>
+        <p>Enter the number: </p>
+        <input type="number" id="number">
+        <input type="button" onclick="cubeFun()" value="Submit">
+    </div>
+    <div id="content">
+
+    </div>
+    <script>
+        function cubeFun()
+        {
+            var num = document.getElementById('number').value
+            pow = 3
+            var result = 1
+            for(var i = pow; i>0; i--)
+            {
+                result *= num
+            }
+            return document.getElementById('content').innerHTML = `<p>Cube value of entered number is: </p> ${result}`
+        }
+    </script>
+</body>
+</html>

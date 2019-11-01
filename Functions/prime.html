@@ -1,0 +1,106 @@
+<!-- Write a program to find all prime numbers between given interval using functions -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Write a program to find all prime numbers between given interval using functions</p>
+    <div class="container">
+        <p>Enter the range to find Prime numbers:</p>
+        <input type="number" id="start" placeholder="From" required>
+        <input type="number" id="end" placeholder="To" required>
+        <input type="button" value="Submit" onclick="primeFun()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function primeFun()
+        {
+            var start = document.getElementById('start').value
+            var end = document.getElementById('end').value
+            var temp = 0
+            start = parseInt(start)
+            end = parseInt(end)
+            if(start == end)
+            {
+                if(start == 1)
+                {
+                    document.getElementById('content').innerHTML =`<p>It's neither Prime nor composite number</p>`
+                }
+                else if(start == 2 || start == 3)
+                {
+                    document.getElementById('content').innerHTML =`<p>${start} is a Prime number</p>`
+                }
+                else
+                {
+                    flag = 0
+                    for(j = 2; j<=start/2; j++)
+                    {
+                        if(start %j == 0)
+                        {
+                            flag = 1
+                            break
+                        }
+                    }
+                    if(flag != 1)
+                    {
+                        document.getElementById('content').innerHTML =`<p>${start} is a Prime number</p>`
+                    }
+                    else
+                    {
+                        document.getElementById('content').innerHTML =`<p>No Prime nummber found</p>`
+                    }
+                }
+            }
+            else if(start > end)
+            {
+                temp = start
+                start = end
+                end = temp
+                var flag = 0
+                document.getElementById('content').innerHTML =  `<p>Prime number(s) are: </p>`
+                for(i = start; i<=end; i++)
+                {
+                    flag = 0
+                    for(j = 2; j<=i/2; j++)
+                    {
+                        if(i %j == 0)
+                        {
+                            flag = 1
+                            break
+                        }
+                    }
+                    if(flag != 1)
+                    {
+                        document.getElementById('content').innerHTML +=`${i} `
+                    }
+                }
+            }
+            else
+            {
+                document.getElementById('content').innerHTML =  `<p>Prime number(s) are: </p>`
+                for(i = start; i<=end; i++)
+                {
+                    flag = 0
+                    for(j = 2; j<=i/2; j++)
+                    {
+                        if(i %j == 0)
+                        {
+                            flag = 1
+                            break
+                        }
+                    }
+                    if(flag != 1)
+                    {
+                        document.getElementById('content').innerHTML +=`${i} `
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

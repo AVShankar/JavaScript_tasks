@@ -1,0 +1,84 @@
+<!-- Write a program to print all Armstrong numbers between given interval using functions -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to print all Armstrong numbers between given interval using functions</p>
+        <p>Enter the range:</p>
+        <input type="number" id="start" placeholder="From">
+        <input type="number" id="end" placeholder="To">
+        <input type="button" value="Submit" onclick="checkFunc()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function checkFunc()
+        {
+            var start = document.getElementById('start').value
+            var end = document.getElementById('end').value
+            var temp = 0
+            start = parseInt(start)
+            end = parseInt(end)
+            if(start == end)
+            {
+                var num = Array.from(String(start), Number)
+                var len = num.length
+                var result = 0
+                for(var i=0; i<len; i++)
+                {
+                    result += num[i] * num[i] * num[i]
+                }
+                if(result == start)
+                {
+                    document.getElementById('content').innerHTML = `<p>${start} is an Armstrong number</p>`
+                }
+            }
+            else if(start > end)
+            {
+                temp = start
+                start = end
+                end = temp
+                document.getElementById('content').innerHTML = `<p>Armstrong numbers are: </p>`
+                for(i=start; i<=end; i++)
+                {
+                    var num = Array.from(String(i), Number)
+                    var len = num.length
+                    var result = 0
+                    for(j=0; j<len; j++)
+                    {
+                        result += num[j] * num[j] * num[j]
+                    }
+                    if(result == i)
+                    {
+                        document.getElementById('content').innerHTML += `${i} `
+                    }
+                }
+            }
+            else
+            {
+                document.getElementById('content').innerHTML = `<p>Armstrong numbers are: </p>`
+                for(i=start; i<=end; i++)
+                {
+                    var num = Array.from(String(i), Number)
+                    var len = num.length
+                    var result = 0
+                    for(j=0; j<len; j++)
+                    {
+                        result += num[j] * num[j] * num[j]
+                    }
+                    if(result == i)
+                    {
+                        document.getElementById('content').innerHTML += `${i} `
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

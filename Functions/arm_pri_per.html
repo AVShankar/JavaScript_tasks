@@ -1,0 +1,85 @@
+<!-- Write a program to check whether a number is prime, Armstrong or perfect number using functions -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to check whether a number is prime, Armstrong or perfect number using functions</p>
+        <p>Enter a number:</p>
+        <input type="number" id="number">
+        <input type="button" value="Submit" onclick="verifyFunc()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function verifyFunc()
+        {
+            document.getElementById('content').innerHTML =""
+            var num = document.getElementById('number').value
+            primeFunc(num)
+            armstrongFunc(num)
+            perfectFunc(num)
+        }
+        function primeFunc(num)
+        {
+            if(num == 1)
+                {
+                    document.getElementById('content').innerHTML =`<p>It's neither Prime nor composite number</p>`
+                }
+                else if(num == 2 || num == 3)
+                {
+                    document.getElementById('content').innerHTML =`<p>${num} is a Prime number</p>`
+                }
+                else
+                {
+                    flag = 0
+                    for(j = 2; j<=num/2; j++)
+                    {
+                        if(num %j == 0)
+                        {
+                            flag = 1
+                            break
+                        }
+                    }
+                    if(flag != 1)
+                    {
+                        document.getElementById('content').innerHTML =`<p>${num} is a Prime number</p>`
+                    }
+                }
+        }
+        function armstrongFunc(num)
+        {
+            var arr = Array.from(String(num), Number)
+            var len = arr.length
+            var result = 0
+            for(i=0; i<len; i++)
+            {
+                result += arr[i] * arr[i] * arr[i]
+            }
+            if(result == num)
+            {
+                document.getElementById('content').innerHTML += `<p>${num} is an Armstrong number</p>`
+            }
+        }
+
+        function perfectFunc(num)
+        {
+            var result = 0
+            for(i=1; i<=num/2; i++)
+            {
+                if(num %i == 0)
+                    result += i
+            }
+            if(result == num)
+            {
+                document.getElementById('content').innerHTML += `<p>${num} is a Perfect number</p>`
+            }
+        }
+    </script>
+</body>
+</html>

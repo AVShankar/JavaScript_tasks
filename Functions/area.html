@@ -1,0 +1,44 @@
+<!-- Write a program to find diameter, circumference and area of circle using functions. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to find diameter, circumference and area of circle using functions</p>
+        <p>Enter the radius value: </p>
+        <input type="number" id="radius">
+        <input type="button" value="Calculate" onclick="areaFun()">
+    </div>
+    <div id="content">
+
+    </div>
+    <script>
+        function areaFun()
+        {
+            var radius = document.getElementById('radius').value
+            var pi = Math.PI
+            diameter(radius)
+            circumference(pi, radius)
+            area(pi, radius)
+        }
+        function diameter(radius)
+        {
+            return document.getElementById('content').innerHTML = `<p>Diameter of the circle: ${2*radius}`
+        }
+        function circumference(pi, radius)
+        {
+            return document.getElementById('content').innerHTML += `<p>Circumference of circle: ${2*pi*radius}`
+        }
+        function area(pi, radius)
+        {
+            return document.getElementById('content').innerHTML += `<p>Area of the circle is: ${pi*radius*radius}`
+        }
+    </script>
+</body>
+</html>
