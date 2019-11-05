@@ -1,0 +1,38 @@
+<!-- Write a program to toggle case of each character of a string -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to toggle case of each character of a string</p>
+        <p>Enter the string: </p>
+        <input type="text" id="str">
+        <input type="button" value="Convert" onclick="convertFunc()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function convertFunc()
+        {
+            var str = document.getElementById('str').value
+            var len = str.length
+            var convertedStr = []
+            for(i=0; i<len; i++)
+            {
+                if(str[i] === (str[i].toUpperCase()))
+                    convertedStr[i]= str[i].toLowerCase()
+
+                if(str[i] === (str[i].toLowerCase()))
+                    convertedStr[i] = str[i].toUpperCase()
+            }
+            convertedStr = convertedStr.join('')
+            document.getElementById('content').innerHTML = `<p>${convertedStr}</p>`
+        }
+    </script>
+</body>
+</html>

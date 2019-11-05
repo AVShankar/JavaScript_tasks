@@ -1,0 +1,39 @@
+<!-- Write a program to copy one string to another string -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to copy one string to another string</p>
+        <p>Enter a string: </p>
+        <input type="text" id="str">
+        <input type="button" value="Copy" onclick="copyFunc()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function copyFunc()
+        {
+            var str = document.getElementById('str').value
+            str = Array.from(str)
+            var copiedStr = []
+            console.log(str)
+            len = str.length
+            for(i=0; i<len; i++)
+            {
+                copiedStr.push(str[i])
+            }
+            str = str.join('')
+            copiedStr = copiedStr.join('')
+            console.log(copiedStr)
+            document.getElementById('content').innerHTML = `<p>Entered string: ${str}</p>`
+            document.getElementById('content').innerHTML += `<p>Copied string: ${copiedStr}</p>`
+        }
+    </script>
+</body>
+</html>

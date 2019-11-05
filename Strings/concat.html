@@ -1,0 +1,29 @@
+<!-- Write a program to concatenate two strings -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+            <p>Program to concatenate two strings</p>
+            <p>Enter two string: </p>
+            <input type="text" id="str1">
+            <input type="text" id="str2">
+            <input type="button" value="Concat" onclick="concatFunc()">
+        </div>
+        <div id="content"></div>
+        <script>
+            function concatFunc()
+            {
+                var str1 = document.getElementById('str1').value
+                var str2 = document.getElementById('str2').value
+                document.getElementById('content').innerHTML = `<p>The concatenated string is: ${str1.concat(str2)}</p>`
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- Write a program to find length of a string -->
+<!-- Without in-built function -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to find length of a string</p>
+        <p>Enter a string: </p>
+        <input type="text" id="str">
+        <input type="button" value="Check" onclick="checkFunc()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function checkFunc()
+        {
+            var str = document.getElementById('str').value
+            var len = 0
+            var i = 0 
+            while(str.charAt(i) != '')
+            {
+                len++
+                i++
+            }
+            document.getElementById('content').innerHTML = `<p>The length of the string is: ${len}</p>`
+        }
+    </script>
+</body>
+</html>

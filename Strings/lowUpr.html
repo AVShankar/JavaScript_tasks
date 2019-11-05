@@ -1,0 +1,32 @@
+<!-- Write a program to convert lowercase string to uppercase -->
+<!-- Write a program to convert uppercase string to lowercase -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Program to convert lowercase string to uppercase</p>
+        <p>Enter a Lower case string: </p>
+        <input type="text" id="str1">
+        <p>Enter a Upper case string: </p>
+        <input type="text" id="str2"><br><br>
+        <input type="button" value="Convert" onclick="convertFunc()">
+    </div>
+    <div id="content"></div>
+    <script>
+        function convertFunc()
+        {
+            var str1 = document.getElementById('str1').value
+            var str2 = document.getElementById('str2').value
+            document.getElementById('content').innerHTML = `<p>Converted string: ${str1.toUpperCase()}</p>`
+            document.getElementById('content').innerHTML += `<p>Converted string: ${str2.toLowerCase()}</p>`
+        }
+    </script>
+</body>
+</html>
