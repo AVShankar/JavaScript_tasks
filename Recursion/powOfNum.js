@@ -1,3 +1,4 @@
+// Write a program to find power of any number using recursion
 // I/p => 5 2
 // O/p => 25
 
