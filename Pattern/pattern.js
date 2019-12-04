@@ -10,7 +10,7 @@ const prompts = rl.createInterface(
 prompts.question('Enter the total number of lines: ', value => {
     let n = value
     let k = n
-    res=[]
+    let res=[]
     for (i=0; i<n; i++)
     {
         for (j=0; j<k; j++)
@@ -18,8 +18,8 @@ prompts.question('Enter the total number of lines: ', value => {
             res.push('*')
         }
         console.log(res.join(" "))
-        res=[]
-        k = k-1
+        res = []
+        k -= 1
     }
     process.exit()
 })
