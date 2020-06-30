@@ -13,16 +13,13 @@ prompts.question('Enter the number of lines: ', value => {
 
 function print(n)
 {
-    let k = 1
     let res = []
     for(let i=0; i<n; i++)
     {
-        for(let j=0; j<k; j++)
+        for(let j=0; j<i+1; j++)
         {
             res.push("*")
         }
         console.log(res.join(" "))
-        res = []
-        k += 1
     }
 }
